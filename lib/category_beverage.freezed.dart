@@ -23,8 +23,11 @@ class _$CategoryBeverageTearOff {
   const _$CategoryBeverageTearOff();
 
   _CategoryBeverage call(
-      {required String name, required List<Beverage> beverages}) {
+      {required String id,
+      required String name,
+      required List<String> beverages}) {
     return _CategoryBeverage(
+      id: id,
       name: name,
       beverages: beverages,
     );
@@ -40,8 +43,9 @@ const $CategoryBeverage = _$CategoryBeverageTearOff();
 
 /// @nodoc
 mixin _$CategoryBeverage {
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  List<Beverage> get beverages => throw _privateConstructorUsedError;
+  List<String> get beverages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +58,7 @@ abstract class $CategoryBeverageCopyWith<$Res> {
   factory $CategoryBeverageCopyWith(
           CategoryBeverage value, $Res Function(CategoryBeverage) then) =
       _$CategoryBeverageCopyWithImpl<$Res>;
-  $Res call({String name, List<Beverage> beverages});
+  $Res call({String id, String name, List<String> beverages});
 }
 
 /// @nodoc
@@ -68,10 +72,15 @@ class _$CategoryBeverageCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? beverages = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -79,7 +88,7 @@ class _$CategoryBeverageCopyWithImpl<$Res>
       beverages: beverages == freezed
           ? _value.beverages
           : beverages // ignore: cast_nullable_to_non_nullable
-              as List<Beverage>,
+              as List<String>,
     ));
   }
 }
@@ -91,7 +100,7 @@ abstract class _$CategoryBeverageCopyWith<$Res>
           _CategoryBeverage value, $Res Function(_CategoryBeverage) then) =
       __$CategoryBeverageCopyWithImpl<$Res>;
   @override
-  $Res call({String name, List<Beverage> beverages});
+  $Res call({String id, String name, List<String> beverages});
 }
 
 /// @nodoc
@@ -107,10 +116,15 @@ class __$CategoryBeverageCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? beverages = freezed,
   }) {
     return _then(_CategoryBeverage(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -118,7 +132,7 @@ class __$CategoryBeverageCopyWithImpl<$Res>
       beverages: beverages == freezed
           ? _value.beverages
           : beverages // ignore: cast_nullable_to_non_nullable
-              as List<Beverage>,
+              as List<String>,
     ));
   }
 }
@@ -126,19 +140,22 @@ class __$CategoryBeverageCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CategoryBeverage implements _CategoryBeverage {
-  _$_CategoryBeverage({required this.name, required this.beverages});
+  _$_CategoryBeverage(
+      {required this.id, required this.name, required this.beverages});
 
   factory _$_CategoryBeverage.fromJson(Map<String, dynamic> json) =>
       _$$_CategoryBeverageFromJson(json);
 
   @override
+  final String id;
+  @override
   final String name;
   @override
-  final List<Beverage> beverages;
+  final List<String> beverages;
 
   @override
   String toString() {
-    return 'CategoryBeverage(name: $name, beverages: $beverages)';
+    return 'CategoryBeverage(id: $id, name: $name, beverages: $beverages)';
   }
 
   @override
@@ -146,6 +163,7 @@ class _$_CategoryBeverage implements _CategoryBeverage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CategoryBeverage &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.beverages, beverages));
   }
@@ -153,6 +171,7 @@ class _$_CategoryBeverage implements _CategoryBeverage {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(beverages));
 
@@ -169,16 +188,19 @@ class _$_CategoryBeverage implements _CategoryBeverage {
 
 abstract class _CategoryBeverage implements CategoryBeverage {
   factory _CategoryBeverage(
-      {required String name,
-      required List<Beverage> beverages}) = _$_CategoryBeverage;
+      {required String id,
+      required String name,
+      required List<String> beverages}) = _$_CategoryBeverage;
 
   factory _CategoryBeverage.fromJson(Map<String, dynamic> json) =
       _$_CategoryBeverage.fromJson;
 
   @override
+  String get id;
+  @override
   String get name;
   @override
-  List<Beverage> get beverages;
+  List<String> get beverages;
   @override
   @JsonKey(ignore: true)
   _$CategoryBeverageCopyWith<_CategoryBeverage> get copyWith =>

@@ -11,7 +11,7 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       date: json['date'] as String,
       id: json['id'] as String,
       buyerId: json['buyerId'] as String,
-      status: json['status'] as String,
+      doneStatus: json['doneStatus'] as String,
       basket:
           (json['basket'] as List<dynamic>).map((e) => e as String).toList(),
     );
@@ -21,6 +21,6 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'date': instance.date,
       'id': instance.id,
       'buyerId': instance.buyerId,
-      'status': instance.status,
+      'doneStatus': instance.doneStatus,
       'basket': instance.basket,
     };

@@ -23,7 +23,8 @@ class _$BeverageTearOff {
   const _$BeverageTearOff();
 
   _Beverage call(
-      {required String name,
+      {required String id,
+      required String name,
       required int amount,
       required int price,
       required List<String> tags,
@@ -32,6 +33,7 @@ class _$BeverageTearOff {
       required double strength,
       required String composition}) {
     return _Beverage(
+      id: id,
       name: name,
       amount: amount,
       price: price,
@@ -53,6 +55,7 @@ const $Beverage = _$BeverageTearOff();
 
 /// @nodoc
 mixin _$Beverage {
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
@@ -73,7 +76,8 @@ abstract class $BeverageCopyWith<$Res> {
   factory $BeverageCopyWith(Beverage value, $Res Function(Beverage) then) =
       _$BeverageCopyWithImpl<$Res>;
   $Res call(
-      {String name,
+      {String id,
+      String name,
       int amount,
       int price,
       List<String> tags,
@@ -93,6 +97,7 @@ class _$BeverageCopyWithImpl<$Res> implements $BeverageCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? amount = freezed,
     Object? price = freezed,
@@ -103,6 +108,10 @@ class _$BeverageCopyWithImpl<$Res> implements $BeverageCopyWith<$Res> {
     Object? composition = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -145,7 +154,8 @@ abstract class _$BeverageCopyWith<$Res> implements $BeverageCopyWith<$Res> {
       __$BeverageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
+      {String id,
+      String name,
       int amount,
       int price,
       List<String> tags,
@@ -166,6 +176,7 @@ class __$BeverageCopyWithImpl<$Res> extends _$BeverageCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? amount = freezed,
     Object? price = freezed,
@@ -176,6 +187,10 @@ class __$BeverageCopyWithImpl<$Res> extends _$BeverageCopyWithImpl<$Res>
     Object? composition = freezed,
   }) {
     return _then(_Beverage(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -216,7 +231,8 @@ class __$BeverageCopyWithImpl<$Res> extends _$BeverageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Beverage implements _Beverage {
   _$_Beverage(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.amount,
       required this.price,
       required this.tags,
@@ -228,6 +244,8 @@ class _$_Beverage implements _Beverage {
   factory _$_Beverage.fromJson(Map<String, dynamic> json) =>
       _$$_BeverageFromJson(json);
 
+  @override
+  final String id;
   @override
   final String name;
   @override
@@ -247,7 +265,7 @@ class _$_Beverage implements _Beverage {
 
   @override
   String toString() {
-    return 'Beverage(name: $name, amount: $amount, price: $price, tags: $tags, description: $description, image: $image, strength: $strength, composition: $composition)';
+    return 'Beverage(id: $id, name: $name, amount: $amount, price: $price, tags: $tags, description: $description, image: $image, strength: $strength, composition: $composition)';
   }
 
   @override
@@ -255,6 +273,7 @@ class _$_Beverage implements _Beverage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Beverage &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality().equals(other.price, price) &&
@@ -270,6 +289,7 @@ class _$_Beverage implements _Beverage {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(amount),
       const DeepCollectionEquality().hash(price),
@@ -292,7 +312,8 @@ class _$_Beverage implements _Beverage {
 
 abstract class _Beverage implements Beverage {
   factory _Beverage(
-      {required String name,
+      {required String id,
+      required String name,
       required int amount,
       required int price,
       required List<String> tags,
@@ -303,6 +324,8 @@ abstract class _Beverage implements Beverage {
 
   factory _Beverage.fromJson(Map<String, dynamic> json) = _$_Beverage.fromJson;
 
+  @override
+  String get id;
   @override
   String get name;
   @override

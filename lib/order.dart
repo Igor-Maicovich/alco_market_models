@@ -10,7 +10,7 @@ class Order with _$Order {
     required String date,
     required String id,
     required String buyerId,
-    required String status,
+    required String doneStatus,
     required List<String> basket,
   }) = _Order;
 

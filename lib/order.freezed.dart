@@ -27,14 +27,14 @@ class _$OrderTearOff {
       required String date,
       required String id,
       required String buyerId,
-      required String status,
+      required String doneStatus,
       required List<String> basket}) {
     return _Order(
       buyer: buyer,
       date: date,
       id: id,
       buyerId: buyerId,
-      status: status,
+      doneStatus: doneStatus,
       basket: basket,
     );
   }
@@ -53,7 +53,7 @@ mixin _$Order {
   String get date => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   String get buyerId => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
+  String get doneStatus => throw _privateConstructorUsedError;
   List<String> get basket => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -70,7 +70,7 @@ abstract class $OrderCopyWith<$Res> {
       String date,
       String id,
       String buyerId,
-      String status,
+      String doneStatus,
       List<String> basket});
 }
 
@@ -88,7 +88,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
     Object? date = freezed,
     Object? id = freezed,
     Object? buyerId = freezed,
-    Object? status = freezed,
+    Object? doneStatus = freezed,
     Object? basket = freezed,
   }) {
     return _then(_value.copyWith(
@@ -108,9 +108,9 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
           ? _value.buyerId
           : buyerId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      doneStatus: doneStatus == freezed
+          ? _value.doneStatus
+          : doneStatus // ignore: cast_nullable_to_non_nullable
               as String,
       basket: basket == freezed
           ? _value.basket
@@ -130,7 +130,7 @@ abstract class _$OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       String date,
       String id,
       String buyerId,
-      String status,
+      String doneStatus,
       List<String> basket});
 }
 
@@ -149,7 +149,7 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
     Object? date = freezed,
     Object? id = freezed,
     Object? buyerId = freezed,
-    Object? status = freezed,
+    Object? doneStatus = freezed,
     Object? basket = freezed,
   }) {
     return _then(_Order(
@@ -169,9 +169,9 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
           ? _value.buyerId
           : buyerId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      doneStatus: doneStatus == freezed
+          ? _value.doneStatus
+          : doneStatus // ignore: cast_nullable_to_non_nullable
               as String,
       basket: basket == freezed
           ? _value.basket
@@ -189,7 +189,7 @@ class _$_Order implements _Order {
       required this.date,
       required this.id,
       required this.buyerId,
-      required this.status,
+      required this.doneStatus,
       required this.basket});
 
   factory _$_Order.fromJson(Map<String, dynamic> json) =>
@@ -204,13 +204,13 @@ class _$_Order implements _Order {
   @override
   final String buyerId;
   @override
-  final String status;
+  final String doneStatus;
   @override
   final List<String> basket;
 
   @override
   String toString() {
-    return 'Order(buyer: $buyer, date: $date, id: $id, buyerId: $buyerId, status: $status, basket: $basket)';
+    return 'Order(buyer: $buyer, date: $date, id: $id, buyerId: $buyerId, doneStatus: $doneStatus, basket: $basket)';
   }
 
   @override
@@ -222,7 +222,8 @@ class _$_Order implements _Order {
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.buyerId, buyerId) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality()
+                .equals(other.doneStatus, doneStatus) &&
             const DeepCollectionEquality().equals(other.basket, basket));
   }
 
@@ -233,7 +234,7 @@ class _$_Order implements _Order {
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(buyerId),
-      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(doneStatus),
       const DeepCollectionEquality().hash(basket));
 
   @JsonKey(ignore: true)
@@ -253,7 +254,7 @@ abstract class _Order implements Order {
       required String date,
       required String id,
       required String buyerId,
-      required String status,
+      required String doneStatus,
       required List<String> basket}) = _$_Order;
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
@@ -267,7 +268,7 @@ abstract class _Order implements Order {
   @override
   String get buyerId;
   @override
-  String get status;
+  String get doneStatus;
   @override
   List<String> get basket;
   @override

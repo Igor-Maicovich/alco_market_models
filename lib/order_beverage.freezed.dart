@@ -23,8 +23,12 @@ class _$OrderBeverageTearOff {
   const _$OrderBeverageTearOff();
 
   _OrderBeverage call(
-      {required String name, required int amount, required int price}) {
+      {required String id,
+      required String name,
+      required int amount,
+      required int price}) {
     return _OrderBeverage(
+      id: id,
       name: name,
       amount: amount,
       price: price,
@@ -41,6 +45,7 @@ const $OrderBeverage = _$OrderBeverageTearOff();
 
 /// @nodoc
 mixin _$OrderBeverage {
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
@@ -56,7 +61,7 @@ abstract class $OrderBeverageCopyWith<$Res> {
   factory $OrderBeverageCopyWith(
           OrderBeverage value, $Res Function(OrderBeverage) then) =
       _$OrderBeverageCopyWithImpl<$Res>;
-  $Res call({String name, int amount, int price});
+  $Res call({String id, String name, int amount, int price});
 }
 
 /// @nodoc
@@ -70,11 +75,16 @@ class _$OrderBeverageCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? amount = freezed,
     Object? price = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -98,7 +108,7 @@ abstract class _$OrderBeverageCopyWith<$Res>
           _OrderBeverage value, $Res Function(_OrderBeverage) then) =
       __$OrderBeverageCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int amount, int price});
+  $Res call({String id, String name, int amount, int price});
 }
 
 /// @nodoc
@@ -114,11 +124,16 @@ class __$OrderBeverageCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? amount = freezed,
     Object? price = freezed,
   }) {
     return _then(_OrderBeverage(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -139,11 +154,16 @@ class __$OrderBeverageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrderBeverage implements _OrderBeverage {
   _$_OrderBeverage(
-      {required this.name, required this.amount, required this.price});
+      {required this.id,
+      required this.name,
+      required this.amount,
+      required this.price});
 
   factory _$_OrderBeverage.fromJson(Map<String, dynamic> json) =>
       _$$_OrderBeverageFromJson(json);
 
+  @override
+  final String id;
   @override
   final String name;
   @override
@@ -153,7 +173,7 @@ class _$_OrderBeverage implements _OrderBeverage {
 
   @override
   String toString() {
-    return 'OrderBeverage(name: $name, amount: $amount, price: $price)';
+    return 'OrderBeverage(id: $id, name: $name, amount: $amount, price: $price)';
   }
 
   @override
@@ -161,6 +181,7 @@ class _$_OrderBeverage implements _OrderBeverage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _OrderBeverage &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality().equals(other.price, price));
@@ -169,6 +190,7 @@ class _$_OrderBeverage implements _OrderBeverage {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(amount),
       const DeepCollectionEquality().hash(price));
@@ -186,13 +208,16 @@ class _$_OrderBeverage implements _OrderBeverage {
 
 abstract class _OrderBeverage implements OrderBeverage {
   factory _OrderBeverage(
-      {required String name,
+      {required String id,
+      required String name,
       required int amount,
       required int price}) = _$_OrderBeverage;
 
   factory _OrderBeverage.fromJson(Map<String, dynamic> json) =
       _$_OrderBeverage.fromJson;
 
+  @override
+  String get id;
   @override
   String get name;
   @override

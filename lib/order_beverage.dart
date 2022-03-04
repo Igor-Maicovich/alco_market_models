@@ -6,6 +6,7 @@ part 'order_beverage.g.dart';
 @freezed
 class OrderBeverage with _$OrderBeverage {
   factory OrderBeverage({
+    required String id,
     required String name,
     required int amount,
     required int price,
